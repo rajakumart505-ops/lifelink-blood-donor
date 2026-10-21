@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LifeLink is a demo blood donor directory that helps people find volunteer donors.">
+  <title>LifeLink | Blood Donor Directory</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="LifeLink home"><span class="brand-mark">♥</span> LifeLink</a>
+    <nav aria-label="Main navigation">
+      <a href="#find">Find Donors</a>
+      <a href="#register">Become a Donor</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="nav-cta" href="#register">Join the Directory <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> A little help can save a life</p>
+        <h1>Give blood.<br><span>Share hope.</span></h1>
+        <p class="hero-text">Find volunteer blood donors in your community, or register to help someone when it matters most.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#find">Find a donor <span aria-hidden="true">→</span></a>
+          <a class="button button-quiet" href="#register">Become a donor</a>
+        </div>
+        <div class="trust-note"><span class="trust-icon">✓</span> Community-powered · Privacy-conscious · Free to use</div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of a heart and a blood drop">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="hero-heart">♥</div>
+        <div class="floating-card card-top"><span class="mini-icon">✚</span><span><b>One donation</b><small>can make a difference</small></span></div>
+        <div class="floating-card card-bottom"><span class="status-dot"></span><span><b>People helping people</b><small>Start with your community</small></span></div>
+        <div class="spark spark-one">✦</div><div class="spark spark-two">✧</div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Directory overview">
+      <div><strong id="donor-count">6</strong><span>Demo donor profiles</span></div>
+      <div><strong>8</strong><span>Blood groups supported</span></div>
+      <div><strong>100%</strong><span>Community spirit</span></div>
+    </section>
+
+    <section class="section find-section" id="find">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE DONOR DIRECTORY</p><h2>Find a helping hand.</h2></div>
+        <p>Search the demo directory by blood group and city. Profiles below use fictional sample information.</p>
+      </div>
+      <div class="search-panel">
+        <label class="search-field"><span>Search by name or city</span><input id="search-input" type="search" placeholder="e.g. Delhi, Asha..." autocomplete="off"></label>
+        <label class="search-field"><span>Blood group</span><select id="blood-filter"><option value="">All blood groups</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></label>
+        <label class="search-field"><span>Availability</span><select id="availability-filter"><option value="">Any status</option><option value="available">Available</option><option value="not-available">Not available</option></select></label>
+        <button class="button button-primary search-button" id="clear-filters" type="button">Reset</button>
+      </div>
+      <div class="results-line"><p id="results-count" aria-live="polite">Showing 6 demo profiles</p><span class="demo-tag">DEMO DATA</span></div>
+      <div id="donor-list" class="donor-grid"></div>
+      <div id="empty-state" class="empty-state" hidden><span>⌕</span><h3>No matching donors</h3><p>Try another city or blood group.</p></div>
+      <p class="safety-note"><strong>Important:</strong> This hackathon demo does not verify donor identities or medical eligibility. For urgent needs, contact a hospital or official blood bank. Never rely on this demo for emergency care.</p>
+    </section>
+
+    <section class="section join-section" id="register">
+      <div class="join-intro"><p class="eyebrow">MAKE A DIFFERENCE</p><h2>Someone's hope<br>could start with you.</h2><p>Add a sample profile to this demo directory. Your entry is saved only in this browser on this device.</p><div class="join-highlight"><span>♥</span><p><b>Small act. Big impact.</b><br><small>Donate safely through a recognized blood bank or hospital.</small></p></div></div>
+      <form id="donor-form" class="donor-form">
+        <h3>Join the demo directory</h3>
+        <p class="form-subtitle">Fields marked * are required.</p>
+        <label>Display name *<input name="name" required maxlength="40" placeholder="e.g. Demo Donor"></label>
+        <div class="form-row">
+          <label>Blood group *<select name="bloodGroup" required><option value="">Choose group</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></label>
+          <label>City *<input name="city" required maxlength="40" placeholder="e.g. Delhi"></label>
+        </div>
+        <label>Availability *<select name="availability" required><option value="available">Available to be contacted</option><option value="not-available">Not available right now</option></select></label>
+        <label class="check-row"><input type="checkbox" name="consent" required><span>I understand this is a local demo and won't enter anyone else's personal information.</span></label>
+        <button class="button button-primary submit-button" type="submit">Add demo profile <span aria-hidden="true">→</span></button>
+        <p id="form-message" class="form-message" aria-live="polite"></p>
+        <p class="privacy-copy">No phone number or address is collected. Entries saved with this demo stay in your browser's local storage and are not shared with other users.</p>
+      </form>
+    </section>
+
+    <section class="about-strip" id="about"><div class="about-symbol">♥</div><div><p class="eyebrow">ABOUT LIFELINK</p><h2>Technology for a more caring community.</h2><p>LifeLink is a student hackathon prototype exploring how a simple donor directory could help people discover volunteer donors. This version uses sample data and browser-only storage; it is not a live donation service.</p></div></section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark">♥</span> LifeLink</a><p>Made with care for CodeQuest · Student prototype</p><a href="#find">Back to top ↑</a></footer>
+</body>
+</html>
