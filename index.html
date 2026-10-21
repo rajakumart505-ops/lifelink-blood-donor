@@ -72,7 +72,11 @@
         <div class="form-row">
           <label>Blood group *<select name="bloodGroup" required><option value="">Choose group</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></label>
           <label>City *<input name="city" required maxlength="40" placeholder="e.g. Delhi"></label>
-        </div>
+        </div> 
+        <label>Phone number *
+          <input name="phone" type="tel" required
+                 maxlength="20" autocomplete="tel"
+                 placeholder="Your contact number">
         <label>Availability *<select name="availability" required><option value="available">Available to be contacted</option><option value="not-available">Not available right now</option></select></label>
         <label class="check-row"><input type="checkbox" name="consent" required><span>I understand this is a local demo and won't enter anyone else's personal information.</span></label>
         <button class="button button-primary submit-button" type="submit">Add demo profile <span aria-hidden="true">→</span></button>
